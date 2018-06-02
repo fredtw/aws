@@ -6,7 +6,7 @@ This page is largely inspired by the [Running R on AWS article](https://aws.amaz
 This Rserver will be set in a public subnet , then if not yet created, the first steps include providing :
 - VPC with a /16 IPv4 CIDR block
   - configure the IPv4 CIDR block (e.g : 10.0.0.0/16)
-- Internet Gateway (attaches it to the VPC above)
+- Internet Gateway (and attaches it to the VPC above)
 - Public subnet with a /24 IPv4 CIDR block
   - configure the IPv4 CIDR block (e.g : 10.0.1.0/24)
 - Route table
@@ -19,7 +19,7 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
   - Network : VPC configured in step 1
   - Subnet : the public subnet configured in step 1
   - Auto-assign Public IP : Enable
-  - Advanced Details : add **user data** [the link forscript for installation after instance start](https://github.com/fredtw/aws/blob/master/RserverScript.txt); this script installs R, RServer, Shiny and Shiny Server ( Just remender to [check for the latest versions of RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) and make an update if required as well as the username and password configuration.
+  - Advanced Details : add **user data** [the link for a script for installation after instance start](https://github.com/fredtw/aws/blob/master/RserverScript.txt); this script installs R, RServer, Shiny and Shiny Server ( Just remender to [check for the latest versions of RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) and make an update if required as well as the username and password configuration.
  - **Add tags**
     - Name : RServer
  - **Security Group** 
