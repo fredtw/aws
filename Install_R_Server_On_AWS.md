@@ -28,9 +28,9 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
       - Name (e.g: Rserver_SG)
       - Description (e.g :R Server Security Group)
   - Add Security group rules (inbound):
-      -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
-      -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
-   After this configuration , review and launch this instance; Selecting an existing key pair or create a new one
+      - Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
+      - Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
+    After this configuration , review and launch this instance; Selecting an existing key pair or create a new one
  
  
 
