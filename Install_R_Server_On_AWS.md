@@ -2,7 +2,7 @@
 ## Install R Server on AWS Cloud infrastructure
 This page is largely inspired by the [Running R on AWS article](https://aws.amazon.com/fr/blogs/big-data/running-r-on-aws/)
 
-## Step 1 Create a VPC
+## Step 1: Create a VPC
 This Rserver will be set in a public subnet , then if not yet created, the first steps include providing :
 - VPC with a /16 IPv4 CIDR block
   - configure the IPv4 CIDR block (e.g : 10.0.0.0/16)
@@ -14,6 +14,24 @@ This Rserver will be set in a public subnet , then if not yet created, the first
   - subnet association (add the public subnet created above)
   
 ## Step : Launch an EC2
-
+This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type - ami-ca0135b3** AMI with t2.micro as an instance type
+- **Instance configuration**
+  - Network : VPC configured in step 1
+  - Subnet : the public subnet configured in step 1
+  - Auto-assign Public IP : Enable
+  - Advanced Details : add **user data** ( scripts for installation after instance start)
+ - **Add tags**
+  - Name : RServer
+ - **Security Group** 
+ This acts as a firewall that controls the traffic for this instance, here will oen port 22 for ssh communications and port 8787 for Rserver
+  - configure the security groupe:
+    - Name (e.g: Rserver_SG)
+    - Description (e.g :R Server Security Group)
+  - Add Security group rules (inbound):
+    -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
+    -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
+   After this configuration , review and launch this instance; Selecting an existing key pair or create a new one
+ 
+ 
 
 
