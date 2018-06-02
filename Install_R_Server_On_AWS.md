@@ -13,7 +13,7 @@ This Rserver will be set in a public subnet , then if not yet created, the first
   - Route ( target : local (e.g : 10.0.0.0/16; the VPC IPv4 CIDR), and Internet gateway (e.g 0.0.0.0/0)
   - subnet association (add the public subnet created above)
   
-## Step : Launch an EC2
+## Step 2 : Launch an EC2
 This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type - ami-ca0135b3** AMI with t2.micro as an instance type
 - **Instance configuration**
   - Network : VPC configured in step 1
@@ -30,8 +30,13 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
   - Add Security group rules (inbound):
       - Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
       - Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
-    After this configuration , review and launch this instance; Selecting an existing key pair or create a new one
- 
+   - After this configuration , review and launch this instance; Selecting an existing key pair or create a new one
+   
+## Step 3 : connect to the Rserver
+
+After your EC2 instance is running
+- First connect to the instance through ssh
+- Now you can connect to the Rserver using the browser (e.g of URL : http://<the IPV4>:8787
  
 
 
