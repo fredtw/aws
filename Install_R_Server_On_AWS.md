@@ -21,15 +21,15 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
   - Auto-assign Public IP : Enable
   - Advanced Details : add **user data** ( scripts for installation after instance start)
  - **Add tags**
-  - Name : RServer
+    - Name : RServer
  - **Security Group** 
  This acts as a firewall that controls the traffic for this instance, here will oen port 22 for ssh communications and port 8787 for Rserver
   - configure the security groupe:
-    - Name (e.g: Rserver_SG)
-    - Description (e.g :R Server Security Group)
+      - Name (e.g: Rserver_SG)
+      - Description (e.g :R Server Security Group)
   - Add Security group rules (inbound):
-    -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
-    -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
+      -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
+      -Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
    After this configuration , review and launch this instance; Selecting an existing key pair or create a new one
  
  
