@@ -19,7 +19,7 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
   - Network : VPC configured in step 1
   - Subnet : the public subnet configured in step 1
   - Auto-assign Public IP : Enable
-  - Advanced Details : add **user data** [script for installation after instance start](https://github.com/fredtw/aws/blob/master/RserverScript.txt); this script installs R, RServer, Shiny and Shiny Server ( Just remender to [to check for the latest versions of RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) and make an update if required as well as the username and password configuration.
+  - Advanced Details : add **user data** [the link forscript for installation after instance start](https://github.com/fredtw/aws/blob/master/RserverScript.txt); this script installs R, RServer, Shiny and Shiny Server ( Just remender to [check for the latest versions of RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) and make an update if required as well as the username and password configuration.
  - **Add tags**
     - Name : RServer
  - **Security Group** 
@@ -29,14 +29,14 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
       - Description (e.g :R Server Security Group)
   - Add Security group rules (inbound):
       - Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
-      - Type: SSH, Protocol : TCP, Port Range: 22 Source : Anywhere (0.0.0.0,::/0)
+      - Type: Custom TCP Rule, Protocol : TCP, Port Range: 8787 Source : Anywhere (0.0.0.0,::/0)
    - After this configuration , review and launch this instance; Selecting an existing key pair or create a new one
    
 ## Step 3 : connect to the Rserver
 
 After your EC2 instance is running
 - First connect to the instance through ssh
-- Now you can connect to the Rserver using the browser (e.g of URL : http://<the IPV4>:8787) [Screenshot](https://github.com/fredtw/images/blob/master/ConnectToRServerOnAWS.jpg)
+- Now you can connect to the Rserver using the browser (e.g of URL : http://<the IPV4>:8787 ) [example of a connection](https://github.com/fredtw/images/blob/master/ConnectToRServerOnAWS.jpg)
  
 
 
