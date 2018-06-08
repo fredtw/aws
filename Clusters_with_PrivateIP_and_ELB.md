@@ -29,13 +29,14 @@ Because the objectif is to using instances which don’t have public IPs. Howeve
 - Create an instance in each subnet created above (I have used linux, t2.micro)
 - Enable Auto-Assign public IP
 - User Data which creates an HTML page served by Apache httpd web server (link)
-        ``` #!/bin/bash
-            sudo yum update -y  # update packager, just in case the image is outdate
-            sudo yum -y install httpd  # install apache httpd
-            sudo service httpd start   # start apache httpd
-            sudo chkconfig httpd on   start apache httpd on every start and reboot
-            sudo bash -c 'echo Hello Fred > /var/www/html/index.html' # add source code
-        ```
+``` 
+#!/bin/bash
+sudo yum update -y  # update packager, just in case the image is outdate
+sudo yum -y install httpd  # install apache httpd
+sudo service httpd start   # start apache httpd
+sudo chkconfig httpd on   start apache httpd on every start and reboot
+sudo bash -c 'echo Hello Fred > /var/www/html/index.html' # add source code
+```
 
 - Associated the Security group created above( an open one that allows at least SSH and HTTP(80))
 ## Step 7 : Test the Public IP configuration
