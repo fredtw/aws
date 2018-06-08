@@ -66,4 +66,4 @@ The important thing here is to have two instances from different Available Zones
 ## Step 11 : Test Configuration
 Now we are going to test the ELB.
 Copy the ELB’s DNS name from the Description tab in the ELB list view. Paste the address in the browser and press enter.
-[Test link : Screenshot](https://github.com/fredtw/images/blob/master/ELB_2PrivateSubnets.png)
+![Test link : Screenshot](https://github.com/fredtw/images/blob/master/ELB_2PrivateSubnets.png)
