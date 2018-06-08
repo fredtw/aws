@@ -28,14 +28,24 @@ A security group acts as **a virtual firewall** that controls the traffic for on
 Because the objectif is to using instances which don’t have public IPs. However this instances they won’t be able to fetch yum update and source code from the internet. Then we are just going to create instances with a public IP first, this we'll allow to verify that the web server is running, and then create an image of those instances.
 - Create an instance in each subnet created above (I have used linux, t2.micro)
 - Enable Auto-Assign public IP
-- User Data which creates an HTML page served by Apache httpd web server (link)
+- User Data which creates an HTML page served by Apache httpd web server (example of data below )
 ``` 
+# Example for the httpd webServer 1
 #!/bin/bash
 sudo yum update -y  # update packager, just in case the image is outdate
 sudo yum -y install httpd  # install apache httpd
 sudo service httpd start   # start apache httpd
 sudo chkconfig httpd on   start apache httpd on every start and reboot
 sudo bash -c 'echo Hello Fred > /var/www/html/index.html' # add source code
+```
+``` 
+# Example for the httpd webServer 2
+#!/bin/bash
+sudo yum update -y  # update packager, just in case the image is outdate
+sudo yum -y install httpd  # install apache httpd
+sudo service httpd start   # start apache httpd
+sudo chkconfig httpd on   start apache httpd on every start and reboot
+sudo bash -c 'echo Bye Bye Fred > /var/www/html/index.html' # add source code
 ```
 
 - Associated the Security group created above( an open one that allows at least SSH and HTTP(80))
