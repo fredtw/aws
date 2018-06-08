@@ -1,12 +1,12 @@
 ## Create Clusters in private subnets with ELB
 One of the best practices of building highly available, robust and fail-tolerant systems is to build redundancy. 
-Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets,
-
-    Create 2 instances with Apache httpd and hello world HTML, register them with ELB - only private IP
-    Create an app ELB with external (public) IP
-    Test that you can see the page by going to the ELB’s public DNS (not IP!)
-    Stop one of the instances and see if you can still see the webpage
-
+Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets. This note show how to set up a configuration with an ELB by creating 2 instances with Apache httpd servives within only private IP andregister them with ELB -
+The main steps consist of :
+- Create VPC and Subnets
+- Create Internet Gateway, configure security groups
+- Launch instances bounded with Public and Private IP
+- Create ELB
+- Test The configuration
 
 ## Step1 : Create a VPC
 If no exists, create a VPC and specify the IPv4 CIDR block (e.g 10.0.0.0/16)
@@ -52,6 +52,9 @@ sudo bash -c 'echo Bye Bye Fred > /var/www/html/index.html' # add source code
 ## Step 7 : Test the Public IP configuration
 Copy the IPv4 Public IP address of each instance  Paste the address in the browser and press enter. We see: Hello Fred for the first instance and Bye Bye Fred for the second One (or whatever HTML you put on the instances).
 This step validates the configuration of the httpd server
+
+**Instances Configuration and Test**
+![](https://github.com/fredtw/images/blob/master/InstancesBoundedPublicIPs.png)
 ## step 8 : Create Images
 After the validation of httpd server we create an image of each instance :
 - Create an image : select an instance **-> Actions ->Image ->Create image **
@@ -63,6 +66,8 @@ The two instances are launched in the 2 differents Available zones with :
 - User Data: nothing (default)
 - Security Group (at least allow SSH and HTTP (80))
 Once these 2 instances launched we'll see them without Public IPs, just with only pirivate IPs
+**Instances bounded with Private IP**
+![](https://github.com/fredtw/images/blob/master/InstancesBoundedPrivateIPs.png)
 ## Step 10 : Create ELB
 Elastic Load Balancing (ELB) is a load-balancing service that automatically distributes incoming application traffic and scales resources to meet traffic demands. 
 To create a one: we go on AWS web console and navigate to the EC2 management console. In the left sidebar menu, click on Load Balancers, then press a blue button “Create Load Balancer” from the top menu.
