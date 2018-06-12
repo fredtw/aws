@@ -43,7 +43,7 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
  - **Add tags**
     - Name : RServer
  - **Security Group** 
- This acts as a firewall that controls the traffic for this instance, here will oen port 22 for ssh communications and port 8787 for Rserver
+ This acts as a firewall that controls the traffic for this instance, here will on port 22 for ssh communications and port 8787 for Rserver
   - configure the security groupe:
       - Name (e.g: Rserver_SG)
       - Description (e.g :R Server Security Group)
@@ -57,6 +57,9 @@ This configuration has selected an **Amazon Linux AMI 2018.03.0 (HVM), SSD Volum
 After your EC2 instance is running
 - First connect to the instance through ssh
 - Now you can connect to the Rserver using the browser (e.g of URL : http://<the IPV4>:8787 ) 
+
+**_Example of a connection_** :
+
 ![example of a connection](https://github.com/fredtw/images/blob/master/ConnectToRServerOnAWS.jpg)
  
 
