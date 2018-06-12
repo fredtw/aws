@@ -1,4 +1,4 @@
-## aws folder
+## AWS Projects
 
 This directory (../fredtw/aws) contains some projects done on AWS cloud infrasctures. 
 
