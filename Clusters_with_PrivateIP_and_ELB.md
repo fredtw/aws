@@ -1,6 +1,7 @@
 ## Create Clusters in private subnets with ELB
 One of the best practices of building highly available, robust and fail-tolerant systems is to build redundancy. 
 Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets. This note show how to set up a configuration with an ELB by creating 2 instances with Apache httpd servives within only private IP andregister them with ELB -
+![**clusters with ELB**](https://github.com/fredtw/images/blob/master/Clusters_PrivateIp_ELB.PNG)
 The main steps consist of :
 - Create VPC and Subnets
 - Create Internet Gateway, configure security groups
